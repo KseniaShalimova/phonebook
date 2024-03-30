@@ -129,7 +129,7 @@ while True:
             print('В телефонной книге не хранятся такие параметры')
     
     elif command == '/del':
-        parameter = input("Какой параметр необходимо удалить (Введите 'name' - если полностью контакт, 'phones' - если номер телефона, 'birthday' - если дату рождения, 'email' - если почту): ")
+        parameter = input("Какой параметр необходимо удалить (Введите 'name' - если полностью контакт, 'phones' - если номер телефона, 'birthday' - если дату рождения, 'email' - если почту), 'all' - если всю книгу: ")
         if parameter == 'name':
             key = input('Введите имя: ')
             phonebook.pop(key)
@@ -149,6 +149,11 @@ while True:
             key = input('Введите почту: ')
             message = 'Почта'
             delete(message)
+        
+        elif parameter == 'all':
+            phonebook.clear()
+            print('Телефонная книга полностью обновлена!')
+        
         else:
             print('В телефонной книге не хранятся такие параметры')
     
